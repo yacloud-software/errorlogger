@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+
+package errorlogger;
+option java_package = "net.conradwood.golang.apis.errorlogger";
+import "golang.conradwood.net/apis/common/common.proto";
+import "golang.conradwood.net/apis/auth/auth.proto";
+import "golang.conradwood.net/apis/framework/framework.proto";
+import "golang.conradwood.net/apis/goeasyops/goeasyops.proto";
+message ProtoLog {
+  ErrorLogRequest Err=1;
+  auth.User User=2;
+  auth.User Service=3;
+}
+
+message ErrorLogRequest {
+  string UserID = 1;
+  string ServiceName = 2;
+  string MethodName = 3;
+  uint32 Timestamp = 4;
+  uint32 ErrorCode = 5;
+  string ErrorMessage = 6; // for users
+  string LogMessage = 7;   // for yacloud system administrators
+  repeated framework.FrameworkMessageDetail Messages = 8; // deprecated, see Errors field
+  string RequestID = 9; // rpcinterceptor requestid
+  auth.User CallingService=10; // the service which directly called the one that failed
+  goeasyops.GRPCErrorList Errors=11;
+}
+
+message ReadLogRequest {
+  uint32 LogsToSend=1; // how many logs to send before going to real-time?
+  repeated string Services=2; // if set only include these service(s)
+}
+// errorlogger receives structured error reports from go-easyops so that we can sort by user and request etc
+service ErrorLogger {
+  // log an error
+  rpc Log(ErrorLogRequest) returns (common.Void);
+  //  rpc SendToServer(stream PingRequest) returns (PingResponse);
+  rpc ReadLog(ReadLogRequest) returns (stream ProtoLog);
+}
