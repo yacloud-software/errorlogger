@@ -38,6 +38,7 @@ var (
 	port           = flag.Int("port", 4100, "The grpc server port")
 	logdir         = flag.String("logdir", "/var/log/errorlogger", "`directory` of errors log")
 	logger         *filelogger.FileLogger
+	smallLogger    *filelogger.FileLogger
 	userlog        *filelogger.FileLogger
 	protolog       io.Writer
 	peruserlog     = make(map[string]*filelogger.FileLogger)
@@ -53,6 +54,8 @@ func main() {
 	prometheus.MustRegister(errorCounter)
 	var err error
 	logger, err = filelogger.Open(fmt.Sprintf("%s/all.log", *logdir))
+	utils.Bail("failed to open logfile", err)
+	smallLogger, err = filelogger.Open(fmt.Sprintf("%s/small.log", *logdir))
 	utils.Bail("failed to open logfile", err)
 	userlog, err = filelogger.Open(fmt.Sprintf("%s/users.log", *logdir))
 	utils.Bail("failed to open userlogfile", err)
@@ -125,6 +128,10 @@ func (e *echoServer) Log(ctx context.Context, req *pb.ErrorLogRequest) (*common.
 		if fl != nil {
 			fl.WriteString(buf.String())
 		}
+	}
+	ec := codes.Code(req.ErrorCode)
+	if ec != codes.NotFound && ec != codes.PermissionDenied && ec != codes.Unauthenticated {
+		smallLogger.WriteString(buf.String())
 	}
 	return &common.Void{}, nil
 }
