@@ -1,6 +1,6 @@
 // client create: ErrorLoggerClient
 /*
-  Created by /srv/home/cnw/devel/go/go-tools/src/golang.conradwood.net/gotools/protoc-gen-cnw/protoc-gen-cnw.go
+  Created by /home/cnw/devel/go/yatools/src/golang.yacloud.eu/yatools/protoc-gen-cnw/protoc-gen-cnw.go
 */
 
 /* geninfo:
@@ -13,7 +13,7 @@
    varname   : client_ErrorLoggerClient_0
    clientname: ErrorLoggerClient
    servername: ErrorLoggerServer
-   gscvname  : errorlogger.ErrorLogger
+   gsvcname  : errorlogger.ErrorLogger
    lockname  : lock_ErrorLoggerClient_0
    activename: active_ErrorLoggerClient_0
 */
@@ -46,3 +46,7 @@ func GetErrorLoggerClient() ErrorLoggerClient {
 }
 
 func ErrorLoggerLookupID() string { return "errorlogger.ErrorLogger" } // returns the ID suitable for lookup in the registry. treat as opaque, subject to change.
+
+func init() {
+   client.RegisterDependency("errorlogger.ErrorLogger")
+}
