@@ -6,7 +6,7 @@ require (
 	golang.conradwood.net/apis/auth v1.1.2525
 	golang.conradwood.net/apis/common v1.1.2525
 	golang.conradwood.net/apis/errorlogger v1.1.2495
-	golang.conradwood.net/go-easyops v0.1.19709
+	golang.conradwood.net/go-easyops v0.1.19748
 	google.golang.org/grpc v1.57.0
 )
 
