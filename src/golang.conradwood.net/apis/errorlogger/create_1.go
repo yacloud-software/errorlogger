@@ -49,4 +49,5 @@ func ErrorLoggerLookupID() string { return "errorlogger.ErrorLogger" } // return
 
 func init() {
    client.RegisterDependency("errorlogger.ErrorLogger")
+   AddService("errorlogger.ErrorLogger")
 }
