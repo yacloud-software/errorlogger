@@ -4,11 +4,11 @@ go 1.21.1
 
 require (
 	github.com/golang/protobuf v1.5.4
-	golang.conradwood.net/apis/auth v1.1.2931
-	golang.conradwood.net/apis/common v1.1.2931
+	golang.conradwood.net/apis/auth v1.1.2933
+	golang.conradwood.net/apis/common v1.1.2933
 	golang.conradwood.net/apis/framework v1.1.2878
-	golang.conradwood.net/apis/goeasyops v1.1.2931
-	golang.conradwood.net/go-easyops v0.1.27845
+	golang.conradwood.net/apis/goeasyops v1.1.2933
+	golang.conradwood.net/go-easyops v0.1.27983
 	golang.org/x/net v0.25.0
 	google.golang.org/grpc v1.63.2
 )
@@ -29,7 +29,7 @@ require (
 	golang.org/x/sys v0.20.0 // indirect
 	golang.org/x/text v0.15.0 // indirect
 	golang.yacloud.eu/apis/fscache v1.1.2897 // indirect
-	golang.yacloud.eu/apis/session v1.1.2931 // indirect
+	golang.yacloud.eu/apis/session v1.1.2933 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240227224415-6ceb2ff114de // indirect
 	google.golang.org/protobuf v1.34.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
