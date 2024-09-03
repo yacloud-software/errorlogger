@@ -68,7 +68,8 @@ func Listen() error {
 		//fmt.Printf("LOG: %v\n", r)
 		e := r.Err
 		cus := auth.UserIDString(r.User)
-		fmt.Printf("%s %s %s %d %s\n", strlen(cus, 20), strlen(e.UserID, 6), strlen(e.ServiceName+"/"+e.MethodName, 50), e.ErrorCode, e.ErrorMessage)
+		cs := auth.UserIDString(e.CallingService)
+		fmt.Printf("%s %s %s %s %d %s\n", strlen(cus, 20), strlen(cs, 20), strlen(e.UserID, 6), strlen(e.ServiceName+"/"+e.MethodName, 50), e.ErrorCode, e.ErrorMessage)
 		for _, m := range e.Messages {
 			for _, ct := range m.CallTraces {
 				fmt.Printf("      -> %v\n", ct)
