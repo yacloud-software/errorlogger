@@ -1,14 +1,12 @@
 module golang.conradwood.net/errorlogger
 
-go 1.21.1
-
-toolchain go1.22.2
+go 1.22.2
 
 require (
-	golang.conradwood.net/apis/auth v1.1.3229
-	golang.conradwood.net/apis/common v1.1.3229
+	golang.conradwood.net/apis/auth v1.1.3232
+	golang.conradwood.net/apis/common v1.1.3232
 	golang.conradwood.net/apis/errorlogger v1.1.3229
-	golang.conradwood.net/go-easyops v0.1.30646
+	golang.conradwood.net/go-easyops v0.1.30764
 	google.golang.org/grpc v1.66.0
 )
 
@@ -30,7 +28,7 @@ require (
 	golang.conradwood.net/apis/deploymonkey v1.1.3229 // indirect
 	golang.conradwood.net/apis/echoservice v1.1.3229 // indirect
 	golang.conradwood.net/apis/framework v1.1.3229 // indirect
-	golang.conradwood.net/apis/goeasyops v1.1.3229 // indirect
+	golang.conradwood.net/apis/goeasyops v1.1.3232 // indirect
 	golang.conradwood.net/apis/grafanadata v1.1.3229 // indirect
 	golang.conradwood.net/apis/h2gproxy v1.1.3229 // indirect
 	golang.conradwood.net/apis/objectstore v1.1.3229 // indirect
@@ -41,7 +39,7 @@ require (
 	golang.yacloud.eu/apis/autodeployer2 v1.1.3229 // indirect
 	golang.yacloud.eu/apis/faultindicator v1.1.3229 // indirect
 	golang.yacloud.eu/apis/fscache v1.1.3196 // indirect
-	golang.yacloud.eu/apis/session v1.1.3229 // indirect
+	golang.yacloud.eu/apis/session v1.1.3232 // indirect
 	golang.yacloud.eu/apis/unixipc v1.1.3196 // indirect
 	golang.yacloud.eu/apis/urlcacher v1.1.3229 // indirect
 	golang.yacloud.eu/unixipc v0.1.26852 // indirect
