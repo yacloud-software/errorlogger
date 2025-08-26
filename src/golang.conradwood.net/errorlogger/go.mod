@@ -8,7 +8,7 @@ require (
 	golang.conradwood.net/apis/auth v1.1.4021
 	golang.conradwood.net/apis/common v1.1.4021
 	golang.conradwood.net/apis/errorlogger v1.1.4006
-	golang.conradwood.net/go-easyops v0.1.36846
+	golang.conradwood.net/go-easyops v0.1.36966
 	google.golang.org/grpc v1.74.2
 )
 
