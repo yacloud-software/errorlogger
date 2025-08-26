@@ -50,6 +50,7 @@ type echoServer struct {
 
 func main() {
 	flag.Parse()
+   server.SetHealth(common.Health_STARTING)
 	fmt.Printf("Starting ErrorLoggerServer...\n")
 	prometheus.MustRegister(errorCounter)
 	var err error
@@ -66,6 +67,7 @@ func main() {
 	sd := server.NewServerDef()
 	sd.SetNoAuth()
 	sd.SetPort(*port)
+sd.SetOnStartupCallback(startup)
 	sd.SetRegister(server.Register(
 		func(server *grpc.Server) error {
 			e := new(echoServer)
@@ -76,6 +78,9 @@ func main() {
 	err = server.ServerStartup(sd)
 	utils.Bail("Unable to start server", err)
 	os.Exit(0)
+}
+func startup() {
+	server.SetHealth(common.Health_READY)
 }
 
 /************************************
@@ -267,3 +272,6 @@ func match_proto(req *pb.ReadLogRequest, pl *pb.ProtoLog) bool {
 	}
 	return false
 }
+
+
+
