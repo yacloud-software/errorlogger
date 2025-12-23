@@ -3,11 +3,11 @@ module golang.conradwood.net/errorlogger
 go 1.24.0
 
 require (
-	golang.conradwood.net/apis/auth v1.1.4120
-	golang.conradwood.net/apis/common v1.1.4120
-	golang.conradwood.net/apis/errorlogger v1.1.4021
-	golang.conradwood.net/go-easyops v0.1.38116
-	google.golang.org/grpc v1.75.1
+	golang.conradwood.net/apis/auth v1.1.4268
+	golang.conradwood.net/apis/common v1.1.4268
+	golang.conradwood.net/apis/errorlogger v1.1.4186
+	golang.conradwood.net/go-easyops v0.1.38943
+	google.golang.org/grpc v1.77.0
 )
 
 require (
@@ -15,35 +15,36 @@ require (
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
-	github.com/grafana/pyroscope-go v1.2.4 // indirect
-	github.com/grafana/pyroscope-go/godeltaprof v0.1.8 // indirect
+	github.com/grafana/pyroscope-go v1.2.7 // indirect
+	github.com/grafana/pyroscope-go/godeltaprof v0.1.9 // indirect
 	github.com/klauspost/compress v1.18.0 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
-	github.com/prometheus/client_golang v1.23.0 // indirect
+	github.com/prometheus/client_golang v1.23.2 // indirect
 	github.com/prometheus/client_model v0.6.2 // indirect
-	github.com/prometheus/common v0.65.0 // indirect
-	github.com/prometheus/procfs v0.17.0 // indirect
-	golang.conradwood.net/apis/autodeployer v1.1.4021 // indirect
-	golang.conradwood.net/apis/certmanager v1.1.4021 // indirect
-	golang.conradwood.net/apis/deploymonkey v1.1.4021 // indirect
-	golang.conradwood.net/apis/framework v1.1.4021 // indirect
-	golang.conradwood.net/apis/getestservice v1.1.4021 // indirect
-	golang.conradwood.net/apis/goeasyops v1.1.4120 // indirect
-	golang.conradwood.net/apis/grafanadata v1.1.4021 // indirect
-	golang.conradwood.net/apis/h2gproxy v1.1.4021 // indirect
-	golang.conradwood.net/apis/objectstore v1.1.4021 // indirect
-	golang.conradwood.net/apis/registry v1.1.4021 // indirect
-	golang.org/x/net v0.44.0 // indirect
-	golang.org/x/sys v0.36.0 // indirect
-	golang.org/x/text v0.29.0 // indirect
-	golang.yacloud.eu/apis/autodeployer2 v1.1.4021 // indirect
-	golang.yacloud.eu/apis/faultindicator v1.1.4021 // indirect
-	golang.yacloud.eu/apis/fscache v1.1.4021 // indirect
-	golang.yacloud.eu/apis/session v1.1.4120 // indirect
-	golang.yacloud.eu/apis/unixipc v1.1.4021 // indirect
-	golang.yacloud.eu/apis/urlcacher v1.1.4021 // indirect
+	github.com/prometheus/common v0.67.4 // indirect
+	github.com/prometheus/procfs v0.19.2 // indirect
+	go.yaml.in/yaml/v2 v2.4.3 // indirect
+	golang.conradwood.net/apis/autodeployer v1.1.4251 // indirect
+	golang.conradwood.net/apis/certmanager v1.1.4186 // indirect
+	golang.conradwood.net/apis/deploymonkey v1.1.4251 // indirect
+	golang.conradwood.net/apis/framework v1.1.4268 // indirect
+	golang.conradwood.net/apis/getestservice v1.1.4186 // indirect
+	golang.conradwood.net/apis/goeasyops v1.1.4268 // indirect
+	golang.conradwood.net/apis/grafanadata v1.1.4251 // indirect
+	golang.conradwood.net/apis/h2gproxy v1.1.4186 // indirect
+	golang.conradwood.net/apis/objectstore v1.1.4186 // indirect
+	golang.conradwood.net/apis/registry v1.1.4186 // indirect
+	golang.org/x/net v0.47.0 // indirect
+	golang.org/x/sys v0.38.0 // indirect
+	golang.org/x/text v0.31.0 // indirect
+	golang.yacloud.eu/apis/autodeployer2 v1.1.4186 // indirect
+	golang.yacloud.eu/apis/faultindicator v1.1.4251 // indirect
+	golang.yacloud.eu/apis/fscache v1.1.4251 // indirect
+	golang.yacloud.eu/apis/session v1.1.4251 // indirect
+	golang.yacloud.eu/apis/unixipc v1.1.4251 // indirect
+	golang.yacloud.eu/apis/urlcacher v1.1.4186 // indirect
 	golang.yacloud.eu/unixipc v0.1.31725 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20250707201910-8d1bb00bc6a7 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20251022142026-3a174f9686a8 // indirect
 	google.golang.org/protobuf v1.36.10 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect

@@ -4,7 +4,7 @@
 */
 
 /* geninfo:
-   filename  : protos/golang.conradwood.net/apis/errorlogger/errorlogger.proto
+   filename  : golang.conradwood.net/apis/errorlogger/errorlogger.proto
    gopackage : golang.conradwood.net/apis/errorlogger
    importname: ai_0
    clientfunc: GetErrorLogger
