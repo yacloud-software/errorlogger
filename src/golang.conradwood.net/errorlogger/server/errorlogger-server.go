@@ -5,6 +5,11 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	"io"
+	"os"
+	"strings"
+	"sync"
+
 	apb "golang.conradwood.net/apis/auth"
 	"golang.conradwood.net/apis/common"
 	pb "golang.conradwood.net/apis/errorlogger"
@@ -18,10 +23,6 @@ import (
 	"golang.conradwood.net/go-easyops/utils"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
-	"io"
-	"os"
-	"strings"
-	"sync"
 )
 
 var (
@@ -31,7 +32,7 @@ var (
 			Name: "errorlogger_errors_received",
 			Help: "V=1 UNIT=none DESC=logs errors received",
 		},
-		[]string{"grpccode", "service", "method"},
+		[]string{"grpccode", "servicename", "method"},
 	)
 
 	userlock       sync.Mutex
@@ -50,7 +51,7 @@ type echoServer struct {
 
 func main() {
 	flag.Parse()
-   server.SetHealth(common.Health_STARTING)
+	server.SetHealth(common.Health_STARTING)
 	fmt.Printf("Starting ErrorLoggerServer...\n")
 	prometheus.MustRegister(errorCounter)
 	var err error
@@ -67,7 +68,7 @@ func main() {
 	sd := server.NewServerDef()
 	sd.SetNoAuth()
 	sd.SetPort(*port)
-sd.SetOnStartupCallback(startup)
+	sd.SetOnStartupCallback(startup)
 	sd.SetRegister(server.Register(
 		func(server *grpc.Server) error {
 			e := new(echoServer)
@@ -103,7 +104,7 @@ func (e *echoServer) Log(ctx context.Context, req *pb.ErrorLogRequest) (*common.
 	if *debug {
 		fmt.Printf("Service \"%s\", Method \"%s\", code %d\n", req.ServiceName, req.MethodName, req.ErrorCode)
 	}
-	l := prometheus.Labels{"grpccode": fmt.Sprintf("%d", req.ErrorCode), "service": req.ServiceName, "method": req.MethodName}
+	l := prometheus.Labels{"grpccode": fmt.Sprintf("%d", req.ErrorCode), "servicename": req.ServiceName, "method": req.MethodName}
 	errorCounter.With(l).Inc()
 	storeprotolog(ctx, req)
 
@@ -272,6 +273,3 @@ func match_proto(req *pb.ReadLogRequest, pl *pb.ProtoLog) bool {
 	}
 	return false
 }
-
-
-
