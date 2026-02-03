@@ -3,11 +3,11 @@ module golang.conradwood.net/errorlogger
 go 1.24.0
 
 require (
-	golang.conradwood.net/apis/auth v1.1.4268
-	golang.conradwood.net/apis/common v1.1.4268
+	golang.conradwood.net/apis/auth v1.1.4381
+	golang.conradwood.net/apis/common v1.1.4381
 	golang.conradwood.net/apis/errorlogger v1.1.4186
-	golang.conradwood.net/go-easyops v0.1.38943
-	google.golang.org/grpc v1.77.0
+	golang.conradwood.net/go-easyops v0.1.39103
+	google.golang.org/grpc v1.78.0
 )
 
 require (
@@ -29,23 +29,23 @@ require (
 	golang.conradwood.net/apis/deploymonkey v1.1.4268 // indirect
 	golang.conradwood.net/apis/framework v1.1.4268 // indirect
 	golang.conradwood.net/apis/getestservice v1.1.4268 // indirect
-	golang.conradwood.net/apis/goeasyops v1.1.4268 // indirect
+	golang.conradwood.net/apis/goeasyops v1.1.4381 // indirect
 	golang.conradwood.net/apis/grafanadata v1.1.4268 // indirect
 	golang.conradwood.net/apis/h2gproxy v1.1.4268 // indirect
 	golang.conradwood.net/apis/objectstore v1.1.4268 // indirect
 	golang.conradwood.net/apis/registry v1.1.4268 // indirect
-	golang.org/x/net v0.47.0 // indirect
-	golang.org/x/sys v0.38.0 // indirect
-	golang.org/x/text v0.31.0 // indirect
+	golang.org/x/net v0.49.0 // indirect
+	golang.org/x/sys v0.40.0 // indirect
+	golang.org/x/text v0.33.0 // indirect
 	golang.yacloud.eu/apis/autodeployer2 v1.1.4268 // indirect
 	golang.yacloud.eu/apis/faultindicator v1.1.4268 // indirect
 	golang.yacloud.eu/apis/fscache v1.1.4268 // indirect
-	golang.yacloud.eu/apis/session v1.1.4268 // indirect
+	golang.yacloud.eu/apis/session v1.1.4381 // indirect
 	golang.yacloud.eu/apis/unixipc v1.1.4268 // indirect
 	golang.yacloud.eu/apis/urlcacher v1.1.4268 // indirect
 	golang.yacloud.eu/unixipc v0.1.31725 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20251022142026-3a174f9686a8 // indirect
-	google.golang.org/protobuf v1.36.10 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20251029180050-ab9386a59fda // indirect
+	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
