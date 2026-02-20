@@ -6,7 +6,6 @@ option go_package = "golang.conradwood.net/apis/errorlogger";
 option java_package = "net.conradwood.golang.apis.errorlogger";
 import "golang.conradwood.net/apis/common/common.proto";
 import "golang.conradwood.net/apis/auth/auth.proto";
-import "golang.conradwood.net/apis/framework/framework.proto";
 import "golang.conradwood.net/apis/goeasyops/goeasyops.proto";
 message ProtoLog {
   ErrorLogRequest Err=1;
@@ -22,7 +21,6 @@ message ErrorLogRequest {
   uint32 ErrorCode = 5;
   string ErrorMessage = 6; // for users
   string LogMessage = 7;   // for yacloud system administrators
-  repeated framework.FrameworkMessageDetail Messages = 8; // deprecated, see Errors field
   string RequestID = 9; // rpcinterceptor requestid
   auth.User CallingService=10; // the service which directly called the one that failed
   goeasyops.GRPCErrorList Errors=11;
