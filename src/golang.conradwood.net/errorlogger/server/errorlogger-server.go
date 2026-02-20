@@ -122,9 +122,6 @@ func (e *echoServer) Log(ctx context.Context, req *pb.ErrorLogRequest) (*common.
 		req.LogMessage,
 	)
 	buf.WriteString(s)
-	for _, m := range req.Messages {
-		buf.WriteString(fmt.Sprintf("   %s\n", m.Message))
-	}
 	logger.WriteString(buf.String())
 	if req.UserID != "" {
 		userlog.WriteString(buf.String())

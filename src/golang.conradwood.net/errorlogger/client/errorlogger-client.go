@@ -3,14 +3,15 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
+	"strings"
+	"time"
+
 	_ "golang.conradwood.net/apis/common"
 	pb "golang.conradwood.net/apis/errorlogger"
 	"golang.conradwood.net/go-easyops/auth"
 	"golang.conradwood.net/go-easyops/authremote"
 	"golang.conradwood.net/go-easyops/utils"
-	"os"
-	"strings"
-	"time"
 )
 
 var (
@@ -70,11 +71,7 @@ func Listen() error {
 		cus := auth.UserIDString(r.User)
 		cs := auth.UserIDString(e.CallingService)
 		fmt.Printf("%s %s %s %s %d %s\n", strlen(cus, 20), strlen(cs, 20), strlen(e.UserID, 6), strlen(e.ServiceName+"/"+e.MethodName, 50), e.ErrorCode, e.ErrorMessage)
-		for _, m := range e.Messages {
-			for _, ct := range m.CallTraces {
-				fmt.Printf("      -> %v\n", ct)
-			}
-		}
+
 	}
 }
 
